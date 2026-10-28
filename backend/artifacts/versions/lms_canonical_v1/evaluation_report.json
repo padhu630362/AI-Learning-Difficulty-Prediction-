@@ -1,0 +1,401 @@
+{
+  "version_tag": "lms_canonical_v1",
+  "model_name": "LMS Canonical (LogisticRegression)",
+  "trained_at": "2026-10-28T10:03:09.088313",
+  "provenance": "SYNTHETIC_LMS_FORMATIVE_BENCHMARK",
+  "provenance_disclosure": "Trained on rubric-grounded synthetic student telemetry replicating the exact live compute_student_topic_features() schema. Validates internal architecture consistency, boundary robustness, and zero-leakage student generalization. Production-grade validation against real human cohort outcomes remains incomplete until institution-specific labels are collected.",
+  "best_model": "LogisticRegression",
+  "dataset_summary": {
+    "total_rows": 3000,
+    "total_students": 500,
+    "class_distribution": {
+      "Low": 1532,
+      "Moderate": 781,
+      "High": 687
+    },
+    "topic_level_distribution": {
+      "intermediate": 1500,
+      "beginner": 1000,
+      "advanced": 500
+    }
+  },
+  "training_sample_count": 2400,
+  "test_sample_count": 600,
+  "test_students_count": 100,
+  "majority_class_baseline": 0.5083,
+  "best_metrics": {
+    "accuracy": 0.9617,
+    "precision_macro": 0.9593,
+    "recall_macro": 0.9586,
+    "f1_macro": 0.9587,
+    "f1_weighted": 0.9619,
+    "majority_class_baseline": 0.5083,
+    "high_difficulty_recall": 0.9531,
+    "high_difficulty_precision": 0.9839,
+    "high_difficulty_f1": 0.9683,
+    "calibrated_log_loss": 0.1098,
+    "confusion_matrix": {
+      "labels": [
+        "Low",
+        "Moderate",
+        "High"
+      ],
+      "matrix": [
+        [
+          296,
+          9,
+          0
+        ],
+        [
+          6,
+          159,
+          2
+        ],
+        [
+          0,
+          6,
+          122
+        ]
+      ]
+    },
+    "classification_report": {
+      "Low": {
+        "precision": 0.9801324503311258,
+        "recall": 0.9704918032786886,
+        "f1-score": 0.9752883031301482,
+        "support": 305.0
+      },
+      "Moderate": {
+        "precision": 0.9137931034482759,
+        "recall": 0.9520958083832335,
+        "f1-score": 0.9325513196480938,
+        "support": 167.0
+      },
+      "High": {
+        "precision": 0.9838709677419355,
+        "recall": 0.953125,
+        "f1-score": 0.9682539682539683,
+        "support": 128.0
+      },
+      "accuracy": 0.9616666666666667,
+      "macro avg": {
+        "precision": 0.9592655071737791,
+        "recall": 0.958570870553974,
+        "f1-score": 0.9586978636774034,
+        "support": 600.0
+      },
+      "weighted avg": {
+        "precision": 0.9624655491630388,
+        "recall": 0.9616666666666667,
+        "f1-score": 0.9618925179540581,
+        "support": 600.0
+      }
+    },
+    "feature_importances": {
+      "repeated_errors_count": 2.7358,
+      "quiz_score": 1.6342,
+      "learning_pace_gap": 1.3727,
+      "attempt_count": 1.3643,
+      "assignment_score": 1.2636,
+      "exam_score": 0.9338,
+      "study_time_weekly": 0.6491,
+      "attendance_rate": 0.3701,
+      "topic_difficulty_level_beginner": 0.2174,
+      "topic_difficulty_level_advanced": 0.1927,
+      "topic_difficulty_level_intermediate": 0.1066,
+      "previous_topic_score": 0.0763
+    },
+    "cv_f1_macro_mean": 0.9514,
+    "cv_f1_macro_std": 0.0094,
+    "hyperparameters": {
+      "max_iter": 1000,
+      "random_state": 42
+    }
+  },
+  "candidate_comparison": {
+    "RandomForest": {
+      "accuracy": 0.9383,
+      "precision_macro": 0.9333,
+      "recall_macro": 0.9309,
+      "f1_macro": 0.9319,
+      "f1_weighted": 0.9387,
+      "majority_class_baseline": 0.5083,
+      "high_difficulty_recall": 0.9219,
+      "high_difficulty_precision": 0.9593,
+      "high_difficulty_f1": 0.9402,
+      "calibrated_log_loss": 0.1484,
+      "confusion_matrix": {
+        "labels": [
+          "Low",
+          "Moderate",
+          "High"
+        ],
+        "matrix": [
+          [
+            293,
+            12,
+            0
+          ],
+          [
+            10,
+            152,
+            5
+          ],
+          [
+            0,
+            10,
+            118
+          ]
+        ]
+      },
+      "classification_report": {
+        "Low": {
+          "precision": 0.966996699669967,
+          "recall": 0.9606557377049181,
+          "f1-score": 0.9638157894736842,
+          "support": 305.0
+        },
+        "Moderate": {
+          "precision": 0.8735632183908046,
+          "recall": 0.9101796407185628,
+          "f1-score": 0.8914956011730205,
+          "support": 167.0
+        },
+        "High": {
+          "precision": 0.959349593495935,
+          "recall": 0.921875,
+          "f1-score": 0.9402390438247012,
+          "support": 128.0
+        },
+        "accuracy": 0.9383333333333334,
+        "macro avg": {
+          "precision": 0.9333031705189022,
+          "recall": 0.9309034594744937,
+          "f1-score": 0.931850144823802,
+          "support": 600.0
+        },
+        "weighted avg": {
+          "precision": 0.9393596647301399,
+          "recall": 0.9383333333333334,
+          "f1-score": 0.9386569646582166,
+          "support": 600.0
+        }
+      },
+      "feature_importances": {
+        "learning_pace_gap": 0.2955,
+        "quiz_score": 0.2154,
+        "assignment_score": 0.1391,
+        "repeated_errors_count": 0.132,
+        "attempt_count": 0.0706,
+        "previous_topic_score": 0.0632,
+        "exam_score": 0.0432,
+        "attendance_rate": 0.0208,
+        "study_time_weekly": 0.017,
+        "topic_difficulty_level_intermediate": 0.0011,
+        "topic_difficulty_level_beginner": 0.0011,
+        "topic_difficulty_level_advanced": 0.001
+      },
+      "cv_f1_macro_mean": 0.9352,
+      "cv_f1_macro_std": 0.01,
+      "hyperparameters": {
+        "n_estimators": 120,
+        "max_depth": 8,
+        "min_samples_split": 8,
+        "random_state": 42
+      }
+    },
+    "LogisticRegression": {
+      "accuracy": 0.9617,
+      "precision_macro": 0.9593,
+      "recall_macro": 0.9586,
+      "f1_macro": 0.9587,
+      "f1_weighted": 0.9619,
+      "majority_class_baseline": 0.5083,
+      "high_difficulty_recall": 0.9531,
+      "high_difficulty_precision": 0.9839,
+      "high_difficulty_f1": 0.9683,
+      "calibrated_log_loss": 0.1098,
+      "confusion_matrix": {
+        "labels": [
+          "Low",
+          "Moderate",
+          "High"
+        ],
+        "matrix": [
+          [
+            296,
+            9,
+            0
+          ],
+          [
+            6,
+            159,
+            2
+          ],
+          [
+            0,
+            6,
+            122
+          ]
+        ]
+      },
+      "classification_report": {
+        "Low": {
+          "precision": 0.9801324503311258,
+          "recall": 0.9704918032786886,
+          "f1-score": 0.9752883031301482,
+          "support": 305.0
+        },
+        "Moderate": {
+          "precision": 0.9137931034482759,
+          "recall": 0.9520958083832335,
+          "f1-score": 0.9325513196480938,
+          "support": 167.0
+        },
+        "High": {
+          "precision": 0.9838709677419355,
+          "recall": 0.953125,
+          "f1-score": 0.9682539682539683,
+          "support": 128.0
+        },
+        "accuracy": 0.9616666666666667,
+        "macro avg": {
+          "precision": 0.9592655071737791,
+          "recall": 0.958570870553974,
+          "f1-score": 0.9586978636774034,
+          "support": 600.0
+        },
+        "weighted avg": {
+          "precision": 0.9624655491630388,
+          "recall": 0.9616666666666667,
+          "f1-score": 0.9618925179540581,
+          "support": 600.0
+        }
+      },
+      "feature_importances": {
+        "repeated_errors_count": 2.7358,
+        "quiz_score": 1.6342,
+        "learning_pace_gap": 1.3727,
+        "attempt_count": 1.3643,
+        "assignment_score": 1.2636,
+        "exam_score": 0.9338,
+        "study_time_weekly": 0.6491,
+        "attendance_rate": 0.3701,
+        "topic_difficulty_level_beginner": 0.2174,
+        "topic_difficulty_level_advanced": 0.1927,
+        "topic_difficulty_level_intermediate": 0.1066,
+        "previous_topic_score": 0.0763
+      },
+      "cv_f1_macro_mean": 0.9514,
+      "cv_f1_macro_std": 0.0094,
+      "hyperparameters": {
+        "max_iter": 1000,
+        "random_state": 42
+      }
+    },
+    "DecisionTree": {
+      "accuracy": 0.9317,
+      "precision_macro": 0.9287,
+      "recall_macro": 0.9235,
+      "f1_macro": 0.926,
+      "f1_weighted": 0.9317,
+      "majority_class_baseline": 0.5083,
+      "high_difficulty_recall": 0.9297,
+      "high_difficulty_precision": 0.9597,
+      "high_difficulty_f1": 0.9444,
+      "calibrated_log_loss": 0.7259,
+      "confusion_matrix": {
+        "labels": [
+          "Low",
+          "Moderate",
+          "High"
+        ],
+        "matrix": [
+          [
+            293,
+            12,
+            0
+          ],
+          [
+            15,
+            147,
+            5
+          ],
+          [
+            0,
+            9,
+            119
+          ]
+        ]
+      },
+      "classification_report": {
+        "Low": {
+          "precision": 0.9512987012987013,
+          "recall": 0.9606557377049181,
+          "f1-score": 0.9559543230016313,
+          "support": 305.0
+        },
+        "Moderate": {
+          "precision": 0.875,
+          "recall": 0.8802395209580839,
+          "f1-score": 0.8776119402985074,
+          "support": 167.0
+        },
+        "High": {
+          "precision": 0.9596774193548387,
+          "recall": 0.9296875,
+          "f1-score": 0.9444444444444444,
+          "support": 128.0
+        },
+        "accuracy": 0.9316666666666666,
+        "macro avg": {
+          "precision": 0.9286587068845135,
+          "recall": 0.9235275862210006,
+          "f1-score": 0.9260035692481944,
+          "support": 600.0
+        },
+        "weighted avg": {
+          "precision": 0.9318496892892055,
+          "recall": 0.9316666666666666,
+          "f1-score": 0.9316935857237286,
+          "support": 600.0
+        }
+      },
+      "feature_importances": {
+        "learning_pace_gap": 0.8794,
+        "repeated_errors_count": 0.0365,
+        "quiz_score": 0.0258,
+        "study_time_weekly": 0.0175,
+        "exam_score": 0.0165,
+        "attempt_count": 0.0089,
+        "attendance_rate": 0.0082,
+        "previous_topic_score": 0.0044,
+        "assignment_score": 0.0028,
+        "topic_difficulty_level_beginner": 0.0,
+        "topic_difficulty_level_advanced": 0.0,
+        "topic_difficulty_level_intermediate": 0.0
+      },
+      "cv_f1_macro_mean": 0.9309,
+      "cv_f1_macro_std": 0.0141,
+      "hyperparameters": {
+        "max_depth": 6,
+        "min_samples_split": 10,
+        "random_state": 42
+      }
+    }
+  },
+  "feature_names": [
+    "quiz_score",
+    "assignment_score",
+    "exam_score",
+    "study_time_weekly",
+    "attendance_rate",
+    "attempt_count",
+    "repeated_errors_count",
+    "previous_topic_score",
+    "learning_pace_gap",
+    "topic_difficulty_level_beginner",
+    "topic_difficulty_level_intermediate",
+    "topic_difficulty_level_advanced"
+  ]
+}

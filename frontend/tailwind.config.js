@@ -1,0 +1,71 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        forest: {
+          50: '#f0f7f3',
+          100: '#dbeee1',
+          200: '#b9dec6',
+          300: '#8dc5a4',
+          400: '#5ea77f',
+          500: '#3b8a62',
+          600: '#2c6f4e',
+          700: '#24583f',
+          800: '#1f4633',
+          900: '#173628',
+          950: '#0a1c14',
+          980: '#06150f',
+        },
+        gold: {
+          50: '#fdfbf4',
+          100: '#f9f4df',
+          200: '#f3e7bd',
+          300: '#ebd590',
+          400: '#dfbe60',
+          500: '#cfa237',
+          600: '#b7862b',
+          700: '#936424',
+          800: '#785123',
+          900: '#644320',
+        },
+        ivory: {
+          50: '#fdfcf9',
+          100: '#fbf8f0',
+          200: '#f6f0df',
+          300: '#efe4c7',
+          400: '#e4d3a8',
+          500: '#d4be86',
+        },
+        primary: {
+          50: '#f0fdf4',
+          100: '#dcfce7',
+          200: '#bbf7d0',
+          300: '#86efac',
+          400: '#4ade80',
+          500: '#10b981',
+          600: '#059669',
+          700: '#047857',
+          800: '#065f46',
+          900: '#064e3b',
+        },
+      },
+      fontFamily: {
+        serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+      },
+      boxShadow: {
+        'gold-glow': '0 0 25px -5px rgba(207, 162, 55, 0.25)',
+        'emerald-glow': '0 0 25px -5px rgba(16, 185, 129, 0.25)',
+        'card-morning': '0 4px 20px -2px rgba(23, 54, 40, 0.05), 0 2px 6px -1px rgba(23, 54, 40, 0.03)',
+        'card-night': '0 4px 20px -2px rgba(0, 0, 0, 0.4), 0 2px 6px -1px rgba(0, 0, 0, 0.2)',
+      },
+    },
+  },
+  plugins: [],
+}

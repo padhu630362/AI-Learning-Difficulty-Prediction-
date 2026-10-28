@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ivory-50 text-forest-900 selection:bg-gold-200 selection:text-forest-950 transition-colors duration-300;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Night Theme body */
+  html.dark body {
+    @apply bg-forest-980 text-forest-100 selection:bg-gold-900 selection:text-gold-200;
+  }
+}
+
+/* Elegant scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(44, 111, 78, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(207, 162, 55, 0.5);
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgba(44, 111, 78, 0.5);
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(207, 162, 55, 0.7);
+}
+
+/* Premium utility classes */
+@layer utilities {
+  .bg-morning-gradient {
+    background: radial-gradient(circle at 10% 20%, rgba(207, 162, 55, 0.08) 0%, rgba(253, 252, 249, 0.95) 90%);
+  }
+  .bg-night-gradient {
+    background: radial-gradient(circle at 10% 20%, rgba(23, 54, 40, 0.8) 0%, rgba(6, 21, 15, 0.98) 90%);
+  }
+  .border-gold-subtle {
+    border-color: rgba(207, 162, 55, 0.3);
+  }
+  .gold-shimmer {
+    background: linear-gradient(135deg, #cfa237 0%, #ecd68b 50%, #b7862b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
